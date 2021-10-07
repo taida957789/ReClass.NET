@@ -53,6 +53,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
   </ImportGroup>
   <ImportGroup Label="Shared">
   </ImportGroup>
@@ -178,6 +179,11 @@
     <ClCompile Include="..\Dependencies\distorm\src\operands.c" />
     <ClCompile Include="..\Dependencies\distorm\src\prefix.c" />
     <ClCompile Include="..\Dependencies\distorm\src\textdefs.c" />
+    <ClCompile Include="..\Dependencies\libmhyprot\file_utils.cpp" />
+    <ClCompile Include="..\Dependencies\libmhyprot\libmhyprot.cpp" />
+    <ClCompile Include="..\Dependencies\libmhyprot\mhyprot.cpp" />
+    <ClCompile Include="..\Dependencies\libmhyprot\service_utils.cpp" />
+    <ClCompile Include="..\Dependencies\libmhyprot\win_utils.cpp" />
     <ClCompile Include="..\Shared\DistormHelper.cpp" />
     <ClCompile Include="CloseRemoteProcess.cpp" />
     <ClCompile Include="ControlRemoteProcess.cpp" />
@@ -185,6 +191,7 @@
     <ClCompile Include="DisassembleCode.cpp" />
     <ClCompile Include="EnumerateProcesses.cpp" />
     <ClCompile Include="EnumerateRemoteSectionsAndModules.cpp" />
+    <ClCompile Include="InitDriver.cpp" />
     <ClCompile Include="IsProcessValid.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="OpenRemoteProcess.cpp" />
@@ -211,7 +218,11 @@
     <ClInclude Include="..\Shared\Keys.hpp" />
     <ClInclude Include="NativeCore.hpp" />
   </ItemGroup>
+  <ItemGroup>
+    <MASM Include="..\Dependencies\libmhyprot\key.asm" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
   </ImportGroup>
 </Project>

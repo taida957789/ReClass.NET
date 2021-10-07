@@ -51,6 +51,7 @@ namespace ReClassNET
 				// ignored
 			}
 
+		
 			MonoSpaceFont = new FontEx
 			{
 				Font = new Font("Courier New", DpiUtil.ScaleIntX(13), GraphicsUnit.Pixel),
@@ -81,6 +82,12 @@ namespace ReClassNET
 			using (var coreFunctions = new CoreFunctionsManager())
 			{
 				RemoteProcess = new RemoteProcess(coreFunctions);
+
+				if (!CoreFunctions.InitDriver())
+				{
+					throw new Exception("Driver init failed");
+				}
+
 
 				MainForm = new MainForm();
 

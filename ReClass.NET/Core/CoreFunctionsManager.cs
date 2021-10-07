@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.IO;
@@ -176,6 +176,11 @@ namespace ReClassNET.Core
 		public bool SetHardwareBreakpoint(IntPtr id, IntPtr address, HardwareBreakpointRegister register, HardwareBreakpointTrigger trigger, HardwareBreakpointSize size, bool set)
 		{
 			return currentFunctions.SetHardwareBreakpoint(id, address, register, trigger, size, set);
+		}
+
+		public bool InitDriver()
+		{
+			return currentFunctions.InitDriver();
 		}
 
 		#endregion

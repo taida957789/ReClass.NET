@@ -3,6 +3,7 @@ EXPORTS
 	IsProcessValid
 	OpenRemoteProcess
 	CloseRemoteProcess
+	InitDriver
 	ReadRemoteMemory
 	WriteRemoteMemory
 	EnumerateProcesses

@@ -109,6 +109,9 @@
     <ApplicationIcon>Resources\Icon\ReClassNet.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ColorCode, Version=1.0.1.62759, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -123,9 +126,11 @@
       <HintPath>..\Dependencies\Microsoft.ExceptionMessageBox.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -179,61 +184,41 @@
     <Compile Include="Extensions\PointExtension.cs" />
     <Compile Include="Extensions\StringBuilderExtensions.cs" />
     <Compile Include="Extensions\XAttributeExtensions.cs" />
-    <Compile Include="Forms\EnumEditorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\EnumEditorForm.cs" />
     <Compile Include="Forms\EnumEditorForm.Designer.cs">
       <DependentUpon>EnumEditorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EnumListForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\EnumListForm.cs" />
     <Compile Include="Forms\EnumListForm.Designer.cs">
       <DependentUpon>EnumListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EnumSelectionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\EnumSelectionForm.cs" />
     <Compile Include="Forms\EnumSelectionForm.Designer.cs">
       <DependentUpon>EnumSelectionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainForm.Functions.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\NamedAddressesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\MainForm.Functions.cs" />
+    <Compile Include="Forms\NamedAddressesForm.cs" />
     <Compile Include="Forms\NamedAddressesForm.Designer.cs">
       <DependentUpon>NamedAddressesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ClassSelectionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\ClassSelectionForm.cs" />
     <Compile Include="Forms\ClassSelectionForm.Designer.cs">
       <DependentUpon>ClassSelectionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FoundCodeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\FoundCodeForm.cs" />
     <Compile Include="Forms\FoundCodeForm.Designer.cs">
       <DependentUpon>FoundCodeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\InputBytesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\InputBytesForm.cs" />
     <Compile Include="Forms\InputBytesForm.Designer.cs">
       <DependentUpon>InputBytesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Debugger\RemoteDebugger.cs" />
-    <Compile Include="Forms\InputCorrelatorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\InputCorrelatorForm.cs" />
     <Compile Include="Forms\InputCorrelatorForm.Designer.cs">
       <DependentUpon>InputCorrelatorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ScannerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\ScannerForm.cs" />
     <Compile Include="Forms\ScannerForm.Designer.cs">
       <DependentUpon>ScannerForm.cs</DependentUpon>
     </Compile>
@@ -298,9 +283,7 @@
     <Compile Include="Project\CppTypeMapping.cs" />
     <Compile Include="Project\EnumDescription.cs" />
     <Compile Include="Project\ReClassNetProject.cs" />
-    <Compile Include="Controls\BannerBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Controls\BannerBox.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -313,9 +296,7 @@
     <Compile Include="DataExchange\ReClass\CustomNodeSerializer.cs" />
     <Compile Include="DataExchange\ReClass\IReClassExport.cs" />
     <Compile Include="DataExchange\ReClass\ReClassFile.cs" />
-    <Compile Include="Forms\AboutForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\AboutForm.cs" />
     <Compile Include="Forms\AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
@@ -325,63 +306,39 @@
     <Compile Include="Controls\NodeClickEventArgs.cs" />
     <Compile Include="UI\DpiUtil.cs" />
     <Compile Include="Nodes\INodeInfoReader.cs" />
-    <Compile Include="Controls\ProjectView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Controls\ProjectView.cs" />
     <Compile Include="Controls\ProjectView.Designer.cs">
       <DependentUpon>ProjectView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CodeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\CodeForm.cs" />
     <Compile Include="Forms\CodeForm.Designer.cs">
       <DependentUpon>CodeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ColorBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Controls\ColorBox.cs" />
     <Compile Include="Controls\ColorBox.Designer.cs">
       <DependentUpon>ColorBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\CustomToolStripItems.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Forms\IconForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\LogForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Controls\CustomToolStripItems.cs" />
+    <Compile Include="Forms\IconForm.cs" />
+    <Compile Include="Forms\LogForm.cs" />
     <Compile Include="Forms\LogForm.Designer.cs">
       <DependentUpon>LogForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\DualValueBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Controls\DualValueBox.cs" />
     <Compile Include="Controls\DualValueBox.Designer.cs">
       <DependentUpon>DualValueBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\EnumComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Controls\EnumComboBox.cs" />
     <Compile Include="Controls\EnumDescriptionDisplay.cs" />
-    <Compile Include="Controls\HotkeyBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Controls\HotkeyBox.cs" />
     <Compile Include="Controls\HotkeyBox.Designer.cs">
       <DependentUpon>HotkeyBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\IconButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Controls\IconButton.cs" />
     <Compile Include="UI\IconProvider.cs" />
     <Compile Include="UI\LinkedWindowFeatures.cs" />
-    <Compile Include="Controls\MemoryPreviewPopUp.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\MemoryRecordList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Controls\MemoryPreviewPopUp.cs" />
+    <Compile Include="Controls\MemoryRecordList.cs" />
     <Compile Include="Controls\MemoryRecordList.Designer.cs">
       <DependentUpon>MemoryRecordList.cs</DependentUpon>
     </Compile>
@@ -390,9 +347,7 @@
     </Compile>
     <Compile Include="UI\CustomToolStripProfessionalRenderer.cs" />
     <Compile Include="UI\NodeTypesBuilder.cs" />
-    <Compile Include="Controls\PlaceholderTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Controls\PlaceholderTextBox.cs" />
     <Compile Include="Util\BitString.cs" />
     <Compile Include="Util\CircularBuffer.cs" />
     <Compile Include="Util\CommandLineArgs.cs" />
@@ -413,26 +368,18 @@
     <Compile Include="Extensions\StringReaderExtensions.cs" />
     <Compile Include="Util\DirectedGraph.cs" />
     <Compile Include="Util\GrowingList.cs" />
-    <Compile Include="Forms\PluginForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\PluginForm.cs" />
     <Compile Include="Forms\PluginForm.Designer.cs">
       <DependentUpon>PluginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SettingsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\SettingsForm.cs" />
     <Compile Include="Forms\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\HotSpot.cs" />
     <Compile Include="UI\FontEx.cs" />
-    <Compile Include="Controls\HotSpotTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Forms\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Controls\HotSpotTextBox.cs" />
+    <Compile Include="Forms\MainForm.cs" />
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
@@ -445,9 +392,7 @@
     <Compile Include="Logger\LogLevel.cs" />
     <Compile Include="Logger\NullLogger.cs" />
     <Compile Include="Memory\MemoryBuffer.cs" />
-    <Compile Include="Controls\MemoryViewControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Controls\MemoryViewControl.cs" />
     <Compile Include="Native\NativeMethods.cs" />
     <Compile Include="Nodes\BaseContainerNode.cs" />
     <Compile Include="Nodes\BaseFunctionPtrNode.cs" />
@@ -488,15 +433,11 @@
     <Compile Include="Nodes\Vector2Node.cs" />
     <Compile Include="Nodes\Vector3Node.cs" />
     <Compile Include="Nodes\Vector4Node.cs" />
-    <Compile Include="Forms\ProcessBrowserForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\ProcessBrowserForm.cs" />
     <Compile Include="Forms\ProcessBrowserForm.Designer.cs">
       <DependentUpon>ProcessBrowserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ProcessInfoForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\ProcessInfoForm.cs" />
     <Compile Include="Forms\ProcessInfoForm.Designer.cs">
       <DependentUpon>ProcessInfoForm.cs</DependentUpon>
     </Compile>
@@ -608,6 +549,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Compile Include="Debugger\RemoteDebugger.Handler.cs" />
+    <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

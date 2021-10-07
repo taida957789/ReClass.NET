@@ -61,6 +61,24 @@
     <ClCompile Include="..\Shared\DistormHelper.cpp">
       <Filter>Shared</Filter>
     </ClCompile>
+    <ClCompile Include="..\Dependencies\libmhyprot\mhyprot.cpp">
+      <Filter>Functions\libmhyprot</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Dependencies\libmhyprot\service_utils.cpp">
+      <Filter>Functions\libmhyprot</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Dependencies\libmhyprot\win_utils.cpp">
+      <Filter>Functions\libmhyprot</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Dependencies\libmhyprot\file_utils.cpp">
+      <Filter>Functions\libmhyprot</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Dependencies\libmhyprot\libmhyprot.cpp">
+      <Filter>Functions\libmhyprot</Filter>
+    </ClCompile>
+    <ClCompile Include="InitDriver.cpp">
+      <Filter>Functions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="exports.def" />
@@ -77,6 +95,9 @@
     </Filter>
     <Filter Include="Shared">
       <UniqueIdentifier>{faf06b55-02ad-4707-a65d-37e1c0d13640}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Functions\libmhyprot">
+      <UniqueIdentifier>{2ad50bd5-bd98-498d-b7ca-5fa816ccf598}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -121,5 +142,10 @@
     <ClInclude Include="..\Dependencies\distorm\src\x86defs.h">
       <Filter>Dependencies\distorm</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="..\Dependencies\libmhyprot\key.asm">
+      <Filter>Functions\libmhyprot</Filter>
+    </MASM>
   </ItemGroup>
 </Project>
